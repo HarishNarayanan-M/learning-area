@@ -32,6 +32,33 @@
 
     <script>
 
+      const lab=document.querySelector("label");
+      const data=document.querySelector("#item");
+      const btn=document.querySelector("button");
+
+      function myfunction(){
+        const uol=document.querySelector("ul")
+        const list=document.createElement("li")
+        const spa=document.createElement("span");
+        const btn2=document.createElement("button");
+        btn2.textContent="Delete";
+        spa.textContent=data.value;
+        list.appendChild(spa);
+        list.appendChild(btn2);
+        uol.appendChild(list)
+
+
+        data.value="";
+
+        function deleteItem(){
+          btn2.parentElement.remove();
+        }
+
+        btn2.addEventListener("click",deleteItem);
+      }
+
+      btn.addEventListener("click",myfunction)
+
     </script>
   </body>
 </html>
